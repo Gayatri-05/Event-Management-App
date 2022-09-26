@@ -1,0 +1,19 @@
+<div>
+    <h2>Employee Details</h2>
+    <p>Employee Id: {{employees.id}}</p>
+    <p>First Name: {{employees.first_name}}</p>
+    <p>Last Name: {{employees.last_name}}</p>
+    <p>Email: {{employees.email}}</p>
+
+    <input type="button" value="View All Employee" (click)="ViewAll()"/>
+    <input type="button" value="Delete Employee" (click)="deleteEmployee(employees.id)"/>
+    <form [formGroup]="employeeRef" (ngSubmit)="updateEmployee(employees)">
+      <input type="number" placeholder="Enter Employee Id" formControlName="id"/>
+      <input type="text" placeholder="Enter First Name" formControlName="first_name"/>
+      <input type="text" placeholder="Enter Last Name" formControlName="last_name"/>
+      <input type="text" placeholder="Enter Email" formControlName="email"/>
+      <input type="submit" value="Update Employee" class="btn btn-success"/>
+    </form>
+</div>  
+
+
